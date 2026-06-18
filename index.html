@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小松みらいプロジェクト - 若者の声で街を変える</title>
+    <style>
+        /* 全体スタイリング */
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+        }
+
+        /* ヘッダー */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 15px 20px;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #007BFF;
+        }
+        .cta-btn-header {
+            background-color: #FF5722;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .cta-btn-header:hover {
+            background-color: #E64A19;
+        }
+
+        /* ヒーローセクション */
+        .hero {
+            background: linear-gradient(135deg, #007BFF 0%, #00C6FF 100%);
+            color: white;
+            text-align: center;
+            padding: 160px 20px 100px;
+        }
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        .cta-btn-large {
+            background-color: #FF5722;
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 22px;
+            font-weight: bold;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.2s, background 0.3s;
+            display: inline-block;
+        }
+        .cta-btn-large:hover {
+            background-color: #E64A19;
+            transform: translateY(-2px);
+        }
+
+        /* イントロダクション */
+        .intro {
+            max-width: 800px;
+            margin: 80px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .intro h2 {
+            font-size: 32px;
+            color: #007BFF;
+            margin-bottom: 30px;
+        }
+        .intro p {
+            font-size: 18px;
+            color: #555;
+        }
+
+        /* 課題セクション */
+        .issues {
+            background-color: #fff;
+            padding: 80px 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 50px;
+        }
+        .issue-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .issue-card {
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.3s;
+        }
+        .issue-card:hover {
+            transform: translateY(-5px);
+        }
+        .issue-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+        .issue-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #007BFF;
+        }
+        .issue-card p {
+            font-size: 15px;
+            color: #666;
+        }
+
+        /* プロジェクト概要 */
+        .about {
+            max-width: 1000px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+        .about-box {
+            background: #e6f4ff;
+            border-left: 8px solid #007BFF;
+            padding: 40px;
+            border-radius: 0 15px 15px 0;
+        }
+        .about h3 {
+            font-size: 24px;
+            margin-top: 0;
+        }
+        .about ul {
+            padding-left: 20px;
+            font-size: 16px;
+        }
+        .about li {
+            margin-bottom: 10px;
+        }
+
+        /* 行動喚起 (フッターCTA) */
+        .bottom-cta {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        .bottom-cta h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .bottom-cta p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #ccc;
+        }
+
+        /* フッター */
+        footer {
+            background-color: #222;
+            color: #777;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            border-top: 1px solid #444;
+        }
+
+        /* レスポンシブ対応 */
+        @media(max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 16px; }
+            .intro h2, .section-title, .bottom-cta h2 { font-size: 26px; }
+            .cta-btn-large { font-size: 18px; padding: 15px 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">小松みらいプロジェクト</div>
+            <a href="#join" class="cta-btn-header">参加を申し込む</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>「ぶっちゃけ、ここ不便じゃない？」<br>高校生の本音から始まる、小松の新しいまちづくり。</h1>
+        <p>普段の通学、放課後の遊び場、毎日の生活の中で感じるリアルな課題。愚痴で終わらせるのではなく、私たちの手でワクワクするアイデアに変えてみませんか？</p>
+        <a href="#join" class="cta-btn-large">あなたの声を届ける ➔</a>
+    </section>
+
+    <section class="intro">
+        <h2>私たちが集まって、本音で話したこと。</h2>
+        <p>「小松って住みやすいけど、もっとこうなったらいいのに…」<br>
+        ある日の放課後、高校生が集まって地域の課題について自由に話し合いました。<br>
+        大人の会議では出てこない、現役学生ならではのリアルな視点がここにあります。</p>
+    </section>
+
+    <section class="issues">
+        <h2 class="section-title">私たちが日常で感じる4つの「地域課題」</h2>
+        <div class="issue-grid">
+            
+            <div class="issue-card">
+                <div class="issue-icon">🚌</div>
+                <h3>公共交通機関の壁</h3>
+                <p>電車の本数やバス（シャトルバスなど）の便数が少なく、移動がとにかく大変！自転車がない人にとっては、どこに行くにも一苦労なのが現状です。</p>
+            </div>
+
+            <div class="issue-card">
+                <div class="issue-icon">🎳</div>
+                <h3>放課後の遊び場不足</h3>
+                <p>「新小松イオンくらいしか行くところがない…」との声が多数。もっと気軽に集まれて、みんなで楽しく遊べる魅力的なスポットを求めています。</p>
+            </div>
+
+            <div class="issue-card">
+                <div class="issue-icon">✈️</div>
+                <h3>飛行機の騒音問題</h3>
+                <p>小松ならではの課題として挙がったのが、飛行機（戦闘機）の音。時には学校の授業や体育の声が聞こえなくなるほどの迫力です（笑）。</p>
+            </div>
+
+            <div class="issue-card">
+                <div class="issue-icon">✍️</div>
+                <h3>塾・教育の選択肢</h3>
+                <p>駅近くの東進など大手の塾はあるものの、全体的に選択肢が少なく感じています。学生がもっと切磋琢磨できる学習環境の充実も大切です。</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="about-box">
+            <h3>「小松みらいプロジェクト」でやりたいこと</h3>
+            <p>今の小松市は「ゴミも少なくて綺麗だし、割と良い街」。その満足度に甘んじることなく、若者世代のアイデアをプラスして、さらに面白い街にアップデートします！</p>
+            <ul>
+                <li><strong>学生ミーティングの定期開催：</strong> 地元の学生が集まり、街の改善案をブレストします。</li>
+                <li><strong>行政・企業への提言：</strong> まとまったアイデアを小松市や地元企業へ直接プレゼン。</li>
+                <li><strong>学生主導イベントの企画：</strong> 「遊び場がないなら作ろう！」をテーマに、期間限定のイベントを企画。</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="join" class="bottom-cta">
+        <h2>あなたの「本音」も、街を変える原動力になります。</h2>
+        <p>小さな不満や、「こうなったらいいな」という妄想を大歓迎。一緒に小松を盛り上げましょう！</p>
+        <a href="#" class="cta-btn-large">メンバーとして参加・登録する</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 小松みらいプロジェクト. All Rights Reserved. (Based on Student Brainstorming Session)</p>
+    </footer>
+
+</body>
+</html>
+
